@@ -1,0 +1,20 @@
+ 
+<h1 class="title">Articles</h1>
+<%= link_to 'New article', new_article_path %>
+<div>
+  <% @articles.each do |article| %>
+  <section class="jumbotron">
+   		<h3><%= article.title %></h3>
+      <p><%= article.text %></p>
+      <hr>
+      <div>
+      <%= link_to 'Show', article_path(article) %>
+      <%= link_to 'Edit', edit_article_path(article) %>
+      <%= link_to 'Destroy', article_path(article),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></div>
+              
+    </section>
+  <% end %>
+
+</div>

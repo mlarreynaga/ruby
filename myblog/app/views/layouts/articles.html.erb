@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Articles | Blog</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Latest compiled and minified CSS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <body>
+	 <nav class="navbar navbar-default ">
+      <div class="container">
+        <div class="navbar-header">
+	        <%= link_to "My Blog", {controller: "welcome"}, class: "navbar-brand" %>
+        </div>
+	        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+	          <li><%= link_to "Home", {controller: "welcome"} %></li>
+	          <li><%= link_to "Articles", {controller: "articles"} %></li>
+          </ul>
+        </div>
+      </div>
+	 </nav>
+	  <div class="container">
+    <%= yield %>
+	  </div>
+  </body>
+</html>
